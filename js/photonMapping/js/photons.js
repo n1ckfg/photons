@@ -325,7 +325,7 @@ function draw() {
 }
 
 function drawInterface() {
-	let img1 = "1_32.png", img2 = "2_32.png", img3 = "3_32.png";
+	let img1 = "./images/1_32.png", img2 = "./images/2_32.png", img3 = "./images/3_32.png";
 	gfx.stroke(221,221,204);
 	gfx.fill(221,221,204);
 	gfx.rect(0,szImg,szImg,48); //Fill Background with Page Color
