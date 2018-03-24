@@ -333,8 +333,7 @@ function drawInterface() {
 	if (!view3D) {
 		gfx.fill(0);
 		img3 = "gray_" + img3;
-	}
-	else {
+	} else {
 		gfx.fill(160);
 	}
 
