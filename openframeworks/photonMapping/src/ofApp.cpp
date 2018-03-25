@@ -2,7 +2,18 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+	width = ofGetWidth();
+	height = ofGetHeight();
+	
+	renderedPixels.allocate(width, height, OF_PIXELS_RGBA);
+	for (int y = 0; y < height; y++) {
+		for (int x = 0; x < width; x++) {
+			renderedPixels.setColor(x, y, ofColor::red);
+		}
+	}
 
+	rendered = shared_ptr<ofTexture>(new ofTexture);
+	rendered->allocate(renderedPixels);
 }
 
 //--------------------------------------------------------------
@@ -12,7 +23,10 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+	ofBackground(128, 128, 128);
+	ofSetColor(255, 255, 255, 255);
 
+	rendered->draw(0, 0);
 }
 
 //--------------------------------------------------------------
