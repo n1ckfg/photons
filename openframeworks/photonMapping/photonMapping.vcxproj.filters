@@ -17,6 +17,24 @@
     <ClInclude Include="src\ofApp.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Controls.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lighting.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Photons.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rays.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Raytracing.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vectors.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
