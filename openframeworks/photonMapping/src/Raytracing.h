@@ -4,7 +4,7 @@
 // Raytracing ---------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------
 
-void raytrace(float[] ray, float[] origin) {
+void raytrace(float ray[], float origin[]) {
 	gIntersect = false; //No Intersections Along This Ray Yet
 	gDist = 999999.9;   //Maximum Distance to Any Object
 

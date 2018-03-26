@@ -73,6 +73,7 @@ xcuserdata
 *.sdf
 *.opensdf
 *.suo
+*.db
 *.pdb
 *.ilk
 *.aps

@@ -14,6 +14,31 @@ void ofApp::setup(){
 
 	rendered = shared_ptr<ofTexture>(new ofTexture);
 	rendered->allocate(renderedPixels);
+
+	int szImg = 512;                  //Image Size
+	int nrTypes = 2;                  //2 Object Types (Sphere = 0, Plane = 1)
+	int[] nrObjects = { 2,5 };          //2 Spheres, 5 Planes
+	float gAmbient = 0.1;             //Ambient Lighting
+	float[] gOrigin = { 0.0,0.0,0.0 };  //World Origin for Convenient Re-Use Below (Constant)
+	float[] Light = { 0.0,1.2,3.75 };   //Point Light-Source Position
+	float[][] spheres = { { 1.0,0.0,4.0,0.5 },{ -0.6,-1.0,4.5,0.5 } };         //Sphere Center & Radius
+	float[][] planes = { { 0, 1.5 },{ 1, -1.5 },{ 0, -1.5 },{ 1, 1.5 },{ 2,5.0 } }; //Plane Axis & Distance-to-Origin
+
+																					// ----- Photon Mapping -----
+	int nrPhotons = 1000;             //Number of Photons Emitted
+	int nrBounces = 3;                //Number of Times Each Photon Bounces
+	boolean lightPhotons = true;      //Enable Photon Lighting?
+	float sqRadius = 0.7;             //Photon Integration Area (Squared for Efficiency)
+	float exposure = 50.0;            //Number of Photons Integrated at Brightest Pixel
+	int[][] numPhotons = { { 0,0 },{ 0,0,0,0,0 } };              //Photon Count for Each Scene Object
+	float[][][][][] photons = new float[2][5][5000][3][3]; //Allocated Memory for Per-Object Photon Info
+
+														   // ----- Raytracing Globals -----
+	boolean gIntersect = false;       //For Latest Raytracing Call... Was Anything Intersected by the Ray?
+	int gType;                        //... Type of the Intersected Object (Sphere or Plane)
+	int gIndex;                       //... Index of the Intersected Object (Which Sphere/Plane Was It?)
+	float gSqDist, gDist = -1.0;      //... Distance from Ray Origin to Intersection
+	float[] gPoint = { 0.0, 0.0, 0.0 }; //... Point At Which the Ray Intersected the Object
 }
 
 //--------------------------------------------------------------

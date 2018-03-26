@@ -13,6 +13,11 @@ void mouseReleased() {
 
 void keyPressed() {
   switchToMode(key,9999);
+  
+  if (key == ' ') {
+    PImage img = get(0, 0, width, height - 48);
+    img.save("data/render.png");
+  }
 }
    
 void mousePressed() {

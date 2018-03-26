@@ -1,0 +1,1 @@
+<img src="./processing/photonMapping/data/render.png">
